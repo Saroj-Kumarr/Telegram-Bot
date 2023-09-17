@@ -1,5 +1,9 @@
 const { Telegraf } = require("telegraf");
 
+import express from "express";
+const app = express();
+const port = 9000;
+
 const APIKEY = "6556542965:AAHKGnnkPfOW0sQz_CI4KwPFO4WiuITgdYs";
 
 const bot = new Telegraf(APIKEY);
@@ -117,3 +121,11 @@ bot.command(
 );
 
 bot.launch();
+
+app.use("/", (req, res) => {
+  res.json({ message: "Started" });
+});
+
+app.listen(9000, () => {
+  console.log("Server started on 9000");
+});
