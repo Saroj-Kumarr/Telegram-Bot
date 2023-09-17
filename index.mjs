@@ -1,4 +1,4 @@
-const { Telegraf } = require("telegraf");
+import { Telegraf } from "telegraf";
 
 import express from "express";
 const app = express();
